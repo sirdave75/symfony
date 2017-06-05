@@ -1,3 +1,12 @@
 backend_homepage:
-    path:     /
+    path:     /backend
     defaults: { _controller: BackendBundle:Default:index }
+
+backend_users:
+    path:     /backend/usuarios
+    defaults: { _controller: BackendBundle:Usuarios:usuarios }
+
+backend_new_user:
+    path:     /backend/new
+    defaults: { _controller: BackendBundle:Default:new }
+
