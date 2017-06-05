@@ -19,9 +19,13 @@ class DefaultController extends Controller
         $menu_usuarios->addChild($submenu_list_users);
 
         $menu_roles = new MenuItemModel('roles','Roles','/roles');
-
+        $menu = ["menu"=>[$menu_usuarios,$menu_roles]];
+/*
         return $this->render('BackendBundle:Default:index.html.twig',["menu"=>[$menu_usuarios,$menu_roles]]);
   */
-        return $this->render('BackendBundle:Default:index.html.twig');
+        $menu = $this->get("backend.helpers");
+
+
+        return $this->render('BackendBundle:Default:index.html.twig',$menu->menu());
     }
 }

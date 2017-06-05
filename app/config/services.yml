@@ -3,7 +3,6 @@
 parameters:
     #parameter_name: value
     backend_bundle.menu_listener.class:     BackendBundle\EventListener\MyMenuItemListListener
-    avanzu_admin_theme.menu_listener.class:     Avanzu\AdminThemeBundle\EventListener\SidebarSetupMenuDemoListener
 services:
     # default configuration for services in *this* file
     _defaults:
@@ -37,12 +36,3 @@ services:
     #         $someArgument: 'some_value'
 
 
-    backend_bundle.menu_listener.class:
-        class:    '%backend_bundle.menu_listener.class%'
-        tags:
-            - { name: kernel.event_listener, event: theme.sidebar_setup_menu, method: onSetupMenu }
-
-    avanzu_admin_theme.menu_listener.class:
-            class:    '%avanzu_admin_theme.setup_menu_listener.class%'
-            tags:
-                - { name: kernel.event_listener, event: theme.sidebar_setup_menu, method: onSetupMenu }

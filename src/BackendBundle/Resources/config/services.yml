@@ -2,3 +2,18 @@ services:
 #    backend.example:
 #        class: BackendBundle\Example
 #        arguments: ["@service_id", "plain_value", "%parameter%"]
+
+
+    backend.helpers:
+        class:      BackendBundle\Services\Helpers
+        arguments:  ["null"]
+
+    backend_bundle.menu_listener.class:
+           class:    '%backend_bundle.menu_listener.class%'
+           tags:
+               - { name: kernel.event_listener, event: theme.sidebar_setup_menu, method: onSetupMenu }
+
+    avanzu_admin_theme.menu_listener.class:
+           class:    '%avanzu_admin_theme.setup_menu_listener.class%'
+           tags:
+               - { name: kernel.event_listener, event: theme.sidebar_setup_menu, method: onSetupMenu }
