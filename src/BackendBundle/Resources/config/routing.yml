@@ -8,5 +8,5 @@ backend_users:
 
 backend_new_user:
     path:     /backend/new
-    defaults: { _controller: BackendBundle:Default:new }
+    defaults: { _controller: BackendBundle:Usuarios:new }
 

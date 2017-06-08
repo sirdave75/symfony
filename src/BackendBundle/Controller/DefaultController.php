@@ -23,9 +23,9 @@ class DefaultController extends Controller
 /*
         return $this->render('BackendBundle:Default:index.html.twig',["menu"=>[$menu_usuarios,$menu_roles]]);
   */
-        $menu = $this->get("backend.helpers");
+       // $menu = $this->get("backend.helpers");
 
 
-        return $this->render('BackendBundle:Default:index.html.twig',$menu->menu());
+        return $this->render('BackendBundle:Default:index.html.twig');
     }
 }

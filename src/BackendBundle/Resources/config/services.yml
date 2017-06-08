@@ -13,7 +13,3 @@ services:
            tags:
                - { name: kernel.event_listener, event: theme.sidebar_setup_menu, method: onSetupMenu }
 
-    avanzu_admin_theme.menu_listener.class:
-           class:    '%avanzu_admin_theme.setup_menu_listener.class%'
-           tags:
-               - { name: kernel.event_listener, event: theme.sidebar_setup_menu, method: onSetupMenu }
