@@ -10,3 +10,6 @@ backend_new_user:
     path:     /backend/new
     defaults: { _controller: BackendBundle:Usuarios:new }
 
+backend_Roles:
+    path:     /backend/roles
+

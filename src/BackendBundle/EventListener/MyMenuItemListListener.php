@@ -28,17 +28,20 @@ class MyMenuItemListListener {
 
     protected function getMenu(Request $request) {
         // Build your menu here by constructing a MenuItemModel array
-        $menuItems = array(
-            $blog = new MenuItemModel('ItemId', 'ItemDisplayName', 'backend_users', array(/* options */), 'iconclasses fa fa-plane')
-        );
+        $menuItems = [
+            $users = new MenuItemModel('UserId', 'Usuarios', false, array(/* options */), 'iconclasses fa fa-users'),
+            $roles = new MenuItemModel('RoleId', 'Roles','backend_users', array(/* options */), 'iconclasses fa fa-task'),
+        ];
 
         // Add some children
 
         // A child with an icon
-        $blog->addChild(new MenuItemModel('ChildOneItemId', 'ChildOneDisplayName', 'backend_users', array(), 'fa fa-rss-square'));
+        $users->addChild(new MenuItemModel('AddUserId', 'Nuevo usuario', 'backend_new_user', array(), 'fa fa-user-plus'));
 
         // A child with default circle icon
-        $blog->addChild(new MenuItemModel('ChildTwoItemId', 'ChildTwoDisplayName', 'backend_users'));
+        $users->addChild(new MenuItemModel('ListUserId', 'Listado usuarios', 'backend_users', array(), 'fa fa-list'));
+
+
         return $this->activateByRoute($request->get('_route'), $menuItems);
     }
 
